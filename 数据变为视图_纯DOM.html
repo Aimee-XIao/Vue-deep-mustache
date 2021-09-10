@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="list">
+</ul>
+
+</body>
+</html>
+<script>
+    const arr = [
+      { name: '小明', age: 12, sex: '男' },
+      { name: '小红', age: 13, sex: '女' },
+      { name: '小玉', age: 18, sex: '男' }
+    ]
+
+    let list = document.getElementById('list')
+
+    for(let i = 0; i < arr.length; i++) {
+      // 每遍历一项， 都要用DOM方法去创建 li 标签
+      let li = document.createElement('li')
+      let div1 = document.createElement('div')
+      div1.className = 'hd'
+      div1.innerText = arr[i].name + '的信息'
+
+      let div2 = document.createElement('div')
+      div1.className = 'bd'
+      let p1 = document.createElement('p')
+      let p2 = document.createElement('p')
+      let p3 = document.createElement('p')
+      p1.innerText = '姓名：' + arr[i].name
+      p2.innerText = '年龄：' + arr[i].age
+      p3.innerText = '性别：' + arr[i].sex
+      div2.appendChild(p1)
+      div2.appendChild(p2)
+      div2.appendChild(p3)
+
+      li.appendChild(div1)
+      li.appendChild(div2)
+
+      // 创建的节点是孤儿节点，所以必须上树才能被用户看见
+      list.appendChild(li)
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script src="./mustache.js" ></script>
+<script>
+  // console.log(Mustache)
+
+  // 循环使用
+  // const data = {
+  //   arr : [
+  //     { name: '小明', age: 12, sex: '男' },
+  //     { name: '小红', age: 13, sex: '女' },
+  //     { name: '小玉', age: 18, sex: '男' }
+  //   ]
+  // }
+  // let str = `<ul>
+  //               {{#arr}}
+  //               <li>
+  //                   <div className="hd">{{name}} 的基本信息</div>
+  //                   <div className="bd">
+  //                       <p>姓名：{{name}}</p>
+  //                       <p>年龄：{{age}}</p>
+  //                       <p>性别：{{sex}}</p>
+  //                   </div>
+  //               </li>
+  //               {{/arr}}
+  //            </ul>
+  //     `
+  // Mustache.render(str, data)
+  // var dom = Mustache.render(str, data)
+  // document.getElementById('box').innerHTML = dom
+
+  // 不循环
+  //   let str = `<h1>我买了一个{{thing}}， 好{{mood}}</h1>`
+  //   let data = {
+  //       thing: '华为手机',
+  //       mood: '好开心'
+  //   }
+  //   let dom = Mustache.render(str, data)
+  //   document.getElementById('box').innerHTML = dom
+
+  // 循环简单数组
+
+//   let str = `
+//   <ul>
+//     {{#arr}}
+//     <li>{{.}}</li>
+//     {{/arr}}
+// </ul>
+//   `
+//   let data = {
+//     arr : ['wang','yang','liu']
+//   }
+//   let dom = Mustache.render(str, data)
+//   document.getElementById('box').innerHTML = dom
+
+  // 循环嵌套
+
+  let str = `
+    <ul>
+    {{#arr}}
+        <li>{{name}} 的 爱好
+          <ol>
+          {{#hobbies}}
+            <li>
+             {{.}}
+            </li>
+          {{/hobbies}}
+          </ol>
+        </li>
+    {{/arr}}
+    </ul>
+  `
+let data = {
+    arr:[
+      {
+        name: '王',
+        hobbies: ['唱歌', '跳舞']
+      },
+      {
+        name: '杨',
+        hobbies: ['篮球']
+      },
+      {
+        name: '刘',
+        hobbies: ['羽毛球', '打游戏']
+      }
+    ]
+}
+  let dom = Mustache.render(str, data)
+  document.getElementById('box').innerHTML = dom
+
+
+
+
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="box"></div>
+</body>
+</html>
+<script src="/xuni/bundle.js"></script>
+<script>
+  let templateStr = `
+    <ul>
+    {{#arr}}
+        <li>{{name}} 的 爱好
+          <ol>
+          {{#hobbies}}
+            <li class="lis">
+             {{.}}
+            </li>
+          {{/hobbies}}
+          </ol>
+        </li>
+    {{/arr}}
+    </ul>
+  `
+
+  let data = {
+    arr:[
+      { name: '王',hobbies: ['唱歌', '跳舞']},
+      { name: '杨', hobbies: ['篮球'] },
+      {name: '刘', hobbies: ['羽毛球', '打游戏']}
+    ]
+  }
+
+  // let templateStr = '我爱{{somebody}}, {{somebody}} love me,我考了{{a.b.c}}'
+  // let data = {
+  //   somebody: '杨',
+  //   a:{
+  //     b:{
+  //       c: 100
+  //     }
+  //   }
+  // }
+   var dom =  Self_templateEngine.render(templateStr, data)
+  document.getElementById('box').innerHTML = dom
+  console.log(dom)
+</script>

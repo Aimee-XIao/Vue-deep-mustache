@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="list"></ul>
+</body>
+</html>
+<script>
+  const arr = [
+    { name: '小明', age: 12, sex: '男' },
+    { name: '小红', age: 13, sex: '女' },
+    { name: '小玉', age: 18, sex: '男' }
+  ]
+  let list = document.getElementById('list')
+  for(let i = 0; i < arr.length; i++) {
+    list.innerHTML +=
+      `<li>
+        <div className="hd">${arr[i].name} 的基本信息</div>
+        <div className="bd">
+          <p>姓名：${arr[i].name}</p>
+         <p>年龄：${arr[i].age}</p>
+         <p>性别：${arr[i].sex}</p>
+       </div>
+      </li>
+
+      `
+
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
